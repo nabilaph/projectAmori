@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".nav_fragment.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="See reviews based on the category"
+            android:textColor="#000000"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:textSize="15sp"
+            />
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Skincare"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_margin="20dp"
+                android:padding="0dp"
+                app:cardBackgroundColor="@color/kPrimaryLightColor"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="-30dp"
+                        android:layout_marginLeft="-10dp"
+                        android:background="@drawable/skincare" />
+
+                    <TextView
+                        android:layout_marginTop="-30dp"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Skin Care"
+                        android:textColor="@color/kPrimaryColor"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bodyCare"
+                app:cardBackgroundColor="@color/kPrimaryLightColor"
+                app:cardCornerRadius="10dp"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_margin="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="-10dp"
+                        android:background="@drawable/bodycare" />
+
+                    <TextView
+                        android:layout_marginTop="-18dp"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Body Care"
+                        android:textColor="@color/kPrimaryColor"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Makeup"
+                app:cardBackgroundColor="@color/kPrimaryLightColor"
+                app:cardCornerRadius="10dp"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_margin="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="-5dp"
+                        android:background="@drawable/makeup" />
+
+                    <TextView
+                        android:layout_marginTop="-5dp"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Make Up"
+                        android:textColor="@color/kPrimaryColor"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/beautyTools"
+                app:cardBackgroundColor="@color/kPrimaryLightColor"
+                app:cardCornerRadius="10dp"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_margin="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="-10dp"
+                        android:background="@drawable/beautytools" />
+
+                    <TextView
+                        android:layout_marginTop="-30dp"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Beauty Tools"
+                        android:textColor="@color/kPrimaryColor"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="About Us."
+                android:fontFamily="@font/poppins_semibold"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_margin="1dp"
+                android:src="@drawable/aboutusimg"/>
+
+            <TextView
+                android:padding="20dp"
+                android:textStyle="bold"
+                android:background="@drawable/round_border"
+                android:textColor="#000"
+                android:fontFamily="@font/poppins"
+                android:text="Sebuah platform untuk memudahkan user menemukan dan mengetahui produk make up, skincare, dan body care yang sesuai dengan kebutuhan dan kriteria produk yang mereka inginkan dengan mudah. Selain itu user bisa menuliskan review produk yang bisa dibaca oleh semua orang dan saling sharing mengenai banyak produk."
+                android:layout_width="wrap_content"
+                android:textAlignment="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_bg"
+                android:text="Contact Us Here"
+                android:padding="10dp"
+                android:textColor="#FFF"
+                android:fontFamily="@font/poppins"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/instagram"
+                    android:layout_marginRight="50dp"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/twitter"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icemail"
+                    android:layout_marginLeft="50dp"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
