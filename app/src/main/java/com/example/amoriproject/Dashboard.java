@@ -1,11 +1,14 @@
 package com.example.amoriproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -73,5 +76,16 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            Log.i("landscape", "landscape");
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            Log.i("potrait", "potrait");
+        }
     }
 }
