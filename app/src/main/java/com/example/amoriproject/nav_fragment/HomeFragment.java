@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -20,7 +21,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class HomeFragment extends Fragment {
 
     // define variables
-    Button Makeup, Skincare, bodyCare, beautyTools;
+    CardView Makeup, Skincare, bodyCare, beautyTools;
 
     View myFragment;
 
