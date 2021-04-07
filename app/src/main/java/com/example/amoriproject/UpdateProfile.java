@@ -22,7 +22,7 @@ import java.io.IOException;
 public class UpdateProfile extends AppCompatActivity {
 
     private TextView mTextView;
-    private Button cancelBtn, saveBtn;
+    private Button cancelBtn, saveBtn, changePicBtn;
     TextInputLayout fullname, username, password, email;
     ImageView profPic;
 
@@ -42,6 +42,7 @@ public class UpdateProfile extends AppCompatActivity {
         saveBtn = findViewById(R.id.btn_save);
 
         profPic = findViewById(R.id.profilePic);
+        changePicBtn = findViewById(R.id.changePicBtn);
 
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +60,7 @@ public class UpdateProfile extends AppCompatActivity {
             }
         });
 
-        profPic.setOnClickListener(new View.OnClickListener() {
+        changePicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent gallery = new Intent();

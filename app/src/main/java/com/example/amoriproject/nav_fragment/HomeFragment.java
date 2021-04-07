@@ -2,6 +2,7 @@ package com.example.amoriproject.nav_fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -111,6 +112,19 @@ public class HomeFragment extends Fragment {
         });
 
         return myFragment;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if (getFragmentManager() != null) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .detach(this)
+                    .attach(this)
+                    .commit();
+        }
     }
 
 

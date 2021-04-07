@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,10 +28,25 @@ public class EditReview extends AppCompatActivity implements AdapterView.OnItemS
     //define variables
     String id_review, categorySelected;
 
+    SharedPreferences sp;
+
+    // define the name of shared preferences and key
+    String SP_NAME = "mypref";
+    String KEY_NAME = "name";
+    String KEY_CATEGORY = "category";
+    String KEY_REVIEW = "reviewDet";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_review);
+
+        //get shared preferences
+        sp = getSharedPreferences(SP_NAME, MODE_PRIVATE);
+
+        String cat = sp.getString(KEY_CATEGORY, null);
+        String name = sp.getString(KEY_NAME, null);
+        String detail = sp.getString(KEY_REVIEW, "Review about the product");
 
 
         // find components by id according to the defined variable
@@ -50,8 +66,11 @@ public class EditReview extends AppCompatActivity implements AdapterView.OnItemS
         category.setAdapter(adapter);
         category.setOnItemSelectedListener(this);
 
-        int p = adapter.getPosition(categorySelected);
+        int p = adapter.getPosition(cat);
         category.setSelection(p);
+
+        productName.setText(name);
+        reviewDet.setText(detail);
 
         //set on click listener for cancel button
         cancelReview.setOnClickListener(new View.OnClickListener() {

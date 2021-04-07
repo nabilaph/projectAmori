@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,10 +32,22 @@ public class NewReview extends AppCompatActivity implements AdapterView.OnItemSe
     //define variables
     String name, categorySelected, currentDate;
 
+    SharedPreferences sp;
+
+    // define the name of shared preferences and key
+    String SP_NAME = "mypref";
+    String KEY_NAME = "name";
+    String KEY_CATEGORY = "category";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_review);
+
+        sp = getSharedPreferences(SP_NAME, MODE_PRIVATE);
+
+        String cat = sp.getString(KEY_CATEGORY, null);
+        String name = sp.getString(KEY_NAME, null);
 
         //get current date
         currentDate = DateFormat.getDateInstance().format(new Date());
@@ -53,6 +66,13 @@ public class NewReview extends AppCompatActivity implements AdapterView.OnItemSe
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(adapter);
         category.setOnItemSelectedListener(this);
+
+        if(cat.equals("") && name.equals("")){
+            int p = adapter.getPosition(cat);
+            category.setSelection(p);
+
+            productName.setText(name);
+        }
 
         //set on click listener for cancel button
         cancelReview.setOnClickListener(new View.OnClickListener() {

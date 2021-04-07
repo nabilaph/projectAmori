@@ -65,7 +65,7 @@ public class PublicReviewFragment extends Fragment {
         review_date = new ArrayList<>();
         product_category = new ArrayList<>();
 
-        //storeDataInArray();
+        storeDataInArray();
 
         //set adapter
         adapter = new RVAdapter(getContext(),product_name, product_category, review_detail , review_date, username);
@@ -75,7 +75,7 @@ public class PublicReviewFragment extends Fragment {
         return myFrag;
     }
 
-//    public void storeDataInArray(){
+    public void storeDataInArray(){
 //        //get all review from database
 //        Cursor cr = dbHelper.fetchAllReview();
 //        if(cr.getCount() == 0){
@@ -91,5 +91,61 @@ public class PublicReviewFragment extends Fragment {
 //                review_date.add(cr.getString(5));
 //            }
 //        }
-//    }
+        makeupSelected();
+        skincareSelected();
+        beautytoolSelected();
+        bodycareSelected();
+    }
+
+    public void makeupSelected(){
+        int x = 1;
+        while(x<3){
+            product_name.add("Maybelline Sensational Liquid Matte ");
+            product_category.add("Make Up");
+            review_detail.add("Ini ga transfer kalo pake masker dan ga gampang ilang juga cuma kalo buat makan agak ilang tapi masih oke laahh.");
+            username.add("Username1");
+            review_date.add("20 Feb 2021");
+
+            x++;
+        }
+    }
+
+    public void skincareSelected(){
+        int x = 1;
+        while(x<3){
+            product_name.add("Safi Age Defy Foam Cleanser Deep Exfoliator");
+            product_category.add("Skin Care");
+            review_detail.add("After pake ini, menurut aku sih bikin muka jadi bersih banget walaupun bisa dibilang scrub dia itu tergolong lebih kasar dibanding exfoliator lain.");
+            username.add("Username2");
+            review_date.add("20 Feb 2021");
+
+            x++;
+        }
+    }
+
+    public void bodycareSelected(){
+        int x = 1;
+        while(x<3){
+            product_name.add("SCARLETT Brightening Shower Scrub");
+            product_category.add("Body Care");
+            review_detail.add("Badan jadi bersih, wangi, dan segar. Shower scrub ini bertekstur gel dan ada butiran scrub kecilnya. \n");
+            username.add("Username3");
+            review_date.add("20 Feb 2021");
+
+            x++;
+        }
+    }
+
+    public void beautytoolSelected(){
+        int x = 1;
+        while(x<3){
+            product_name.add("MAANGE Set Brush");
+            product_category.add("Beauty Tools");
+            review_detail.add("Harga segini dpt banyak ini worthit bgt dan kualitas bukan kaleng kaleng ini lumayan bgt buat makeup toolsnya");
+            username.add("Username4");
+            review_date.add("20 Feb 2021");
+
+            x++;
+        }
+    }
 }

@@ -111,11 +111,16 @@ public class RVAdapterMyRev extends RecyclerView.Adapter<RVAdapterMyRev.RVviewHo
                 //get id from database
 //                int id = dbHelper.getIdRev(product_name.get(position), product_category.get(position),
 //                        review_detail.get(position), username.get(position),  review_date.get(position));
+                String name = (String) holder.txt_productName.getText();
+                String category = (String) holder.txt_productCategory.getText();
+                String reviewDet = (String) holder.txt_reviewDet.getText();
 
                 //put id to sp
-//                SharedPreferences.Editor editor = holder.sp.edit();
-//                editor.putInt(holder.KEY_REVIEWID, id);
-//                editor.commit();
+                SharedPreferences.Editor editor = holder.sp.edit();
+                editor.putString("name", name);
+                editor.putString("category", category);
+                editor.putString("reviewDet", reviewDet);
+                editor.commit();
 
                 //change page to edit review
                 Intent intent = new Intent(v.getContext(), EditReview.class);

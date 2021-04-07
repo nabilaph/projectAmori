@@ -23,6 +23,9 @@ public class Dashboard extends AppCompatActivity {
     private ChipNavigationBar chipnav;
     private Fragment fragment = null;
 
+    String SP_NAME = "mypref";
+    SharedPreferences sp;
+
     ImageView addReview;
 
     @Override
@@ -30,13 +33,22 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        sp = getSharedPreferences(SP_NAME, MODE_PRIVATE);
+
+        String isDetail = sp.getString("isDetail", null);
+
         // find components by id according to the defined variable
         addReview = findViewById(R.id.addRev);
         chipnav = findViewById(R.id.chipnav);
 
-        // set item selected in chipnav which is Home fragment
-        chipnav.setItemSelected(R.id.nav_home, true);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new HomeFragment()).commit();
+        if(isDetail.equals("details")){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new ProductDetails()).commit();
+        }else{
+            // set item selected in chipnav which is Home fragment
+            chipnav.setItemSelected(R.id.nav_home, true);
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new HomeFragment()).commit();
+
+        }
 
 
         //set on item selected in chipnav to change the page according to the user select

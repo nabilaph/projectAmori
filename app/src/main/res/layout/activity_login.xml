@@ -15,7 +15,7 @@
         android:src="@mipmap/amori_logo_foreground" />
 
     <TextView
-        android:layout_marginTop="-110dp"
+        android:layout_marginTop="-100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Welcome back."
@@ -143,7 +143,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="5dp"/>
 
         <LinearLayout
             android:paddingHorizontal="20dp"
@@ -181,6 +181,7 @@
             android:textAllCaps="false"
             android:textAlignment="center"
             android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:textColor="@color/kGreyColor"
             android:textSize="12sp"/>
 
